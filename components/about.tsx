@@ -23,23 +23,27 @@ export default function About() {
   const features = [
     {
       icon: <Code2 className="h-10 w-10 text-primary" />,
-      title: "Full Stack Development",
-      description: "TEST",
+      title: "Solution-Oriented",
+      description:
+        "I enjoy solving complex problems with elegant, scalable solutions that are easy to maintain and future-proof.",
     },
     {
       icon: <Database className="h-10 w-10 text-primary" />,
       title: "Flexible Data Architecture Expertise",
-      description: "TEST",
+      description:
+        "Proficient in relational, ORM-based, and cloud databases such as MySQL, Prisma, Supabase, and Firebase.",
     },
     {
       icon: <Users className="h-10 w-10 text-primary" />,
       title: "Team Coordination",
-      description: "TEST",
+      description:
+        "Team-oriented and adaptable, I offer new perspectives whether leading or collaborating.",
     },
     {
       icon: <Rocket className="h-10 w-10 text-primary" />,
       title: "Quick Adaptability",
-      description: "TEST",
+      description:
+        "Dependable under pressure, I meet both fixed deadlines and urgent requests without compromise.",
     },
   ];
 
@@ -70,8 +74,24 @@ export default function About() {
             variants={fadeIn}
           >
             <h3 className="text-2xl font-bold mb-4">A Passionate Learner</h3>
-            <p className="text-muted-foreground mb-6">test</p>
-            <p className="text-muted-foreground mb-6">test</p>
+            <p className="text-muted-foreground mb-6">
+              I'm a junior full-stack developer with a passion for solving
+              complex problems through simple, scalable solutions. I enjoy
+              working in collaborative teams, adapt quickly to challenges, and
+              bring a fresh perspective to every project. Whether it’s building
+              robust APIs, working with cloud databases, or delivering on tight
+              deadlines.
+            </p>
+            <p className="text-muted-foreground mb-6">
+              My software development journey began through the CCIT program at
+              FTUI. From there, I explored countless courses on YouTube and
+              continuously sharpened my skills by building small projects
+              whether for assignments or personal interest. I enjoy creating
+              things I find meaningful, both as a builder and as a user.Outside
+              of coding, I’m passionate about martial arts, gaming, and
+              storytelling, interests that often inspire how I approach
+              problem-solving and design.
+            </p>
           </motion.div>
         </div>
 
