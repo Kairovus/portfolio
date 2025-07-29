@@ -1,30 +1,30 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { motion } from "framer-motion"
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 export function MouseFollower() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
-  const [isVisible, setIsVisible] = useState(false)
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY })
-      setIsVisible(true)
-    }
+      setMousePosition({ x: e.clientX, y: e.clientY });
+      setIsVisible(true);
+    };
 
     const handleMouseLeave = () => {
-      setIsVisible(false)
-    }
+      setIsVisible(false);
+    };
 
-    window.addEventListener("mousemove", handleMouseMove)
-    document.body.addEventListener("mouseleave", handleMouseLeave)
+    window.addEventListener("mousemove", handleMouseMove);
+    document.body.addEventListener("mouseleave", handleMouseLeave);
 
     return () => {
-      window.removeEventListener("mousemove", handleMouseMove)
-      document.body.removeEventListener("mouseleave", handleMouseLeave)
-    }
-  }, [])
+      window.removeEventListener("mousemove", handleMouseMove);
+      document.body.removeEventListener("mouseleave", handleMouseLeave);
+    };
+  }, []);
 
   return (
     <>
@@ -41,7 +41,7 @@ export function MouseFollower() {
       </motion.div>
 
       <motion.div
-        className="fixed top-0 left-0 w-2 h-2 rounded-full bg-white pointer-events-none z-50"
+        className="fixed top-0 left-0 w-2 h-2 rounded-full bg-foreground pointer-events-none z-50"
         animate={{
           x: mousePosition.x - 1,
           y: mousePosition.y - 1,
@@ -49,5 +49,5 @@ export function MouseFollower() {
         }}
       />
     </>
-  )
+  );
 }

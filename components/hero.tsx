@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Github, Linkedin, Twitter } from "lucide-react";
+import { ArrowRight, Github, Linkedin } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function Hero() {
@@ -77,11 +77,11 @@ export default function Hero() {
               </Button>
             </div>
 
-            <div className="flex gap-4 mt-8">
+            <div className="flex gap-4 mt-4">
               <Button
                 variant="ghost"
                 size="icon"
-                className="rounded-full"
+                className="rounded-full text-xl"
                 asChild
               >
                 <a
@@ -89,35 +89,21 @@ export default function Hero() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Github className="h-5 w-5" />
+                  <Github className="!w-7 !h-7" />
                 </a>
               </Button>
               <Button
                 variant="ghost"
                 size="icon"
-                className="rounded-full"
+                className="rounded-full text-xl"
                 asChild
               >
                 <a
-                  href="https://linkedin.com"
+                  href="www.linkedin.com/in/muhammad-rizki-dila-bahari"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Linkedin className="h-5 w-5" />
-                </a>
-              </Button>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="rounded-full"
-                asChild
-              >
-                <a
-                  href="https://twitter.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Twitter className="h-5 w-5" />
+                  <Linkedin className="!w-7 !h-7" />
                 </a>
               </Button>
             </div>
