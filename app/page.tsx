@@ -10,7 +10,7 @@ import Navbar from "@/components/navbar";
 import { MouseFollower } from "@/components/mouse-follower";
 
 export const metadata: Metadata = {
-  title: "Muhammad Rizki Dila Baharo | Portfolio",
+  title: "Muhammad Rizki Dila Bahari | Portfolio",
   description: "Professional portfolio of MemoryLeaked - Software Developer",
 };
 

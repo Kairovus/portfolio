@@ -149,8 +149,8 @@ export default function Testimonials() {
               ))}
             </CarouselContent>
             <div className="flex justify-center mt-8">
-              <CarouselPrevious className="relative static translate-y-0 mr-2" />
-              <CarouselNext className="relative static translate-y-0" />
+              <CarouselPrevious className=" static translate-y-0 mr-2" />
+              <CarouselNext className=" static translate-y-0" />
             </div>
           </Carousel>
         </motion.div>

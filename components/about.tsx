@@ -65,7 +65,7 @@ export default function About() {
           <div className="w-20 h-1 bg-primary mx-auto"></div>
         </motion.div>
 
-        <div className="mx-auto max-w-3xl text-center">
+        <div className="mx-auto max-w-5xl text-center">
           <motion.div
             initial="hidden"
             whileInView="visible"
