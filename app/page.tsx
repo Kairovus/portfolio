@@ -3,11 +3,11 @@ import Hero from "@/components/hero";
 import About from "@/components/about";
 import TechStack from "@/components/tech-stack";
 import Projects from "@/components/projects";
-import Testimonials from "@/components/testimonials";
 import Contact from "@/components/contact";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import { MouseFollower } from "@/components/mouse-follower";
+import Certificates from "@/components/certificates";
 
 export const metadata: Metadata = {
   title: "Muhammad Rizki Dila Bahari | Portfolio",
@@ -24,7 +24,7 @@ export default function Home() {
         <About />
         <TechStack />
         <Projects />
-        <Testimonials />
+        <Certificates />
         <Contact />
       </main>
       <Footer />
