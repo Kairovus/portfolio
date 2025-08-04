@@ -1,352 +1,257 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
-import { ExternalLink, Github, ChevronDown } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { ExternalLink, Github } from "lucide-react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { Badge } from "@/components/ui/badge";
 
 export default function Projects() {
-  const [selectedProject, setSelectedProject] = useState(null);
-  const [expandedProject, setExpandedProject] = useState(null);
-
-  const fadeIn = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
-  };
-
   const projects = [
     {
-      id: 1,
       title: "E-Commerce Platform",
-      shortDescription:
-        "A full-featured e-commerce platform with product management.",
       description:
         "A full-featured e-commerce platform with product management, cart functionality, and payment processing.",
-      image: "/placeholder.svg?height=400&width=600",
       tags: ["C++", "Qt", "SQLite", "CMake"],
-      features: [
-        "Inventory management system",
-        "Real-time stock tracking",
-        "Secure payment processing",
-        "Order management dashboard",
-        "Customer analytics",
-      ],
-      demoLink: "#",
-      githubLink: "#",
-      fullDescription:
-        "This e-commerce platform provides businesses with a complete solution for selling products online. Built with C++ and Qt for high performance and cross-platform compatibility. Features include a responsive design, product catalog with filtering and search capabilities, shopping cart functionality, secure checkout integration, user authentication, and an admin dashboard for managing products, orders, and customers.",
+      codeLink: "https://github.com/memoryleaked/ecommerce",
+      liveLink: "https://ecommerce-demo.memoryleaked.dev",
+      image: "/placeholder.svg?height=200&width=300",
     },
     {
-      id: 2,
       title: "Task Management System",
-      shortDescription:
-        "A collaborative task management application with real-time updates.",
       description:
         "A collaborative task management application with real-time updates and team workspaces.",
-      image: "/placeholder.svg?height=400&width=600",
       tags: ["Java", "Spring Boot", "React", "PostgreSQL"],
-      features: [
-        "Real-time collaboration",
-        "Task dependencies",
-        "Resource allocation",
-        "Progress tracking",
-        "Team management",
-      ],
-      demoLink: "#",
-      githubLink: "#",
-      fullDescription:
-        "This task management system helps teams organize and track their work efficiently. Built with Java Spring Boot for the backend and React for the frontend, it provides robust task management capabilities. Features include task creation and assignment, due dates and reminders, progress tracking, file attachments, comments and discussions, team workspaces, and real-time updates.",
+      codeLink: "https://github.com/memoryleaked/task-manager",
+      liveLink: "https://tasks.memoryleaked.dev",
+      image: "/placeholder.svg?height=200&width=300",
     },
     {
-      id: 3,
       title: "System Resource Monitor",
-      shortDescription:
-        "A comprehensive system monitoring tool with real-time analytics.",
       description:
         "A comprehensive system monitoring tool with real-time analytics and performance tracking.",
-      image: "/placeholder.svg?height=400&width=600",
       tags: ["C++", "Python", "Qt", "Linux"],
-      features: [
-        "CPU/Memory monitoring",
-        "Process management",
-        "Network analytics",
-        "Disk usage tracking",
-        "Performance alerts",
-      ],
-      demoLink: "#",
-      githubLink: "#",
-      fullDescription:
-        "This system resource monitor provides real-time insights into system performance. Built primarily in C++ with Python for data analysis, it offers comprehensive monitoring capabilities. The application tracks CPU usage, memory consumption, network traffic, and disk operations, providing detailed analytics and alerts for system administrators.",
+      codeLink: "https://github.com/memoryleaked/system-monitor",
+      liveLink: null,
+      image: "/placeholder.svg?height=200&width=300",
     },
     {
-      id: 4,
       title: "Compiler Design Project",
-      shortDescription:
-        "A custom programming language compiler with optimization features.",
       description:
-        "A custom programming language compiler with advanced optimization features.",
-      image: "/placeholder.svg?height=400&width=600",
+        "A custom programming language compiler with advanced optimization features and error handling.",
       tags: ["C", "LLVM", "Assembly", "Python"],
-      features: [
-        "Lexical analysis",
-        "Syntax parsing",
-        "Code optimization",
-        "Error handling",
-        "Assembly generation",
-      ],
-      demoLink: "#",
-      githubLink: "#",
-      fullDescription:
-        "This compiler project implements a custom programming language with modern features and optimizations. Built using C and LLVM, it includes comprehensive error handling and code optimization capabilities. The compiler performs lexical analysis, syntax parsing, semantic analysis, and generates optimized assembly code.",
+      codeLink: "https://github.com/memoryleaked/custom-compiler",
+      liveLink: null,
+      image: "/placeholder.svg?height=200&width=300",
     },
     {
-      id: 5,
       title: "Distributed Database System",
-      shortDescription: "A distributed database system with high availability.",
       description:
-        "A distributed database system with high availability and fault tolerance.",
-      image: "/placeholder.svg?height=400&width=600",
+        "A distributed database system with high availability, fault tolerance, and automatic sharding.",
       tags: ["C++", "Rust", "gRPC", "Redis"],
-      features: [
-        "Data replication",
-        "Sharding",
-        "Fault tolerance",
-        "Load balancing",
-        "Transaction management",
-      ],
-      demoLink: "#",
-      githubLink: "#",
-      fullDescription:
-        "This distributed database system provides high availability and fault tolerance for large-scale applications. Built with C++ and Rust for performance, it implements advanced features such as data replication, sharding, and automatic failover. The system includes comprehensive monitoring and management tools.",
+      codeLink: "https://github.com/memoryleaked/distributed-db",
+      liveLink: null,
+      image: "/placeholder.svg?height=200&width=300",
     },
     {
-      id: 6,
       title: "Neural Network Framework",
-      shortDescription: "A deep learning framework optimized for performance.",
       description:
-        "A deep learning framework with CUDA acceleration and optimization features.",
-      image: "/placeholder.svg?height=400&width=600",
+        "A deep learning framework with CUDA acceleration, automatic differentiation, and model optimization.",
       tags: ["C++", "CUDA", "Python", "CMake"],
-      features: [
-        "CUDA acceleration",
-        "Automatic differentiation",
-        "Model optimization",
-        "Training pipelines",
-        "Performance profiling",
-      ],
-      demoLink: "#",
-      githubLink: "#",
-      fullDescription:
-        "This neural network framework provides high-performance deep learning capabilities. Built primarily in C++ with CUDA acceleration, it offers comprehensive tools for building and training neural networks. Features include automatic differentiation, model optimization, and detailed performance profiling.",
+      codeLink: "https://github.com/memoryleaked/neural-framework",
+      liveLink: "https://neural.memoryleaked.dev",
+      image: "/placeholder.svg?height=200&width=300",
     },
   ];
 
+  // Animation variants for the container
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  // Animation variants for individual cards
+  const cardVariants = {
+    hidden: {
+      opacity: 0,
+      y: 50,
+      scale: 0.9,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  // Hover animation variants
+  const hoverVariants = {
+    hover: {
+      y: -8,
+      scale: 1.02,
+      transition: {
+        duration: 0.3,
+        ease: "easeInOut",
+      },
+    },
+    tap: {
+      scale: 0.98,
+      transition: {
+        duration: 0.1,
+      },
+    },
+  };
+
   return (
     <section id="projects" className="py-20 bg-muted/30">
-      <div className="container mx-auto px-4">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          variants={fadeIn}
-          className="text-center mb-16"
-        >
-          <Badge variant="outline" className="mb-4">
-            Portfolio
-          </Badge>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Featured Projects
-          </h2>
-          <div className="w-20 h-1 bg-primary mx-auto"></div>
-        </motion.div>
+      <div className="container px-4 md:px-6 mx-auto">
+        <div className="space-y-12">
+          <motion.div
+            className="space-y-4 text-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <Badge variant="outline" className="mb-4">
+              Portfolio
+            </Badge>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+              Featured Projects
+            </h2>
+            <div className="w-20 h-1 bg-primary mx-auto"></div>
+            <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+              A selection of my personal and professional projects showcasing
+              various technologies and skills
+            </p>
+          </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project, index) => (
-            <motion.div
-              key={project.id}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              variants={fadeIn}
-            >
-              <Card
-                className={`group h-full cursor-pointer transition-all duration-300 hover:shadow-lg ${
-                  expandedProject === project.id ? "ring-2 ring-primary" : ""
-                }`}
-                onClick={() =>
-                  setExpandedProject(
-                    expandedProject === project.id ? null : project.id
-                  )
-                }
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            {projects.map((project, index) => (
+              <motion.div
+                key={index}
+                variants={cardVariants}
+                whileHover="hover"
+                whileTap="tap"
+                className="project-card"
               >
-                <CardContent className="p-0">
-                  <div className="relative overflow-hidden">
-                    <img
-                      src={project.image || "/placeholder.svg"}
-                      alt={project.title}
-                      className="w-full aspect-video object-cover transition-transform duration-300 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-background/20 p-6 flex flex-col justify-end">
-                      <h3 className="text-xl font-bold mb-2">
-                        {project.title}
-                      </h3>
-                      <p className="text-muted-foreground text-sm">
-                        {project.shortDescription}
-                      </p>
-                    </div>
-                  </div>
-
-                  <AnimatePresence>
-                    {expandedProject === project.id && (
+                <motion.div variants={hoverVariants}>
+                  <Card className="overflow-hidden h-full flex flex-col cursor-pointer">
+                    <div className="relative h-48 overflow-hidden">
+                      <motion.img
+                        src={project.image || "/placeholder.svg"}
+                        alt={`${project.title} preview`}
+                        className="w-full h-full object-cover"
+                        whileHover={{ scale: 1.1 }}
+                        transition={{ duration: 0.4, ease: "easeOut" }}
+                      />
                       <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: "auto" }}
-                        exit={{ opacity: 0, height: 0 }}
+                        className="absolute inset-0 bg-black/20"
+                        initial={{ opacity: 0 }}
+                        whileHover={{ opacity: 1 }}
                         transition={{ duration: 0.3 }}
-                        className="p-6 border-t"
+                      />
+                    </div>
+                    <CardContent className="project-content flex-1 flex flex-col p-5">
+                      <motion.h3
+                        className="text-lg font-bold"
+                        layoutId={`title-${index}`}
                       >
-                        <div className="space-y-4">
-                          <div className="flex flex-wrap gap-2">
-                            {project.tags.map((tag, i) => (
-                              <Badge key={i} variant="secondary">
-                                {tag}
-                              </Badge>
-                            ))}
-                          </div>
-
-                          <div className="space-y-2">
-                            <h4 className="font-semibold">Key Features:</h4>
-                            <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
-                              {project.features.map((feature, i) => (
-                                <li key={i}>{feature}</li>
-                              ))}
-                            </ul>
-                          </div>
-
-                          <div className="flex gap-4 pt-2">
-                            <Button
-                              size="sm"
-                              variant="outline"
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                window.open(project.githubLink, "_blank");
-                              }}
-                            >
-                              <Github className="h-4 w-4 mr-2" />
-                              Code
-                            </Button>
-                            <Button
-                              size="sm"
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                window.open(project.demoLink, "_blank");
-                              }}
-                            >
-                              <ExternalLink className="h-4 w-4 mr-2" />
-                              Demo
-                            </Button>
-                            <Button
-                              size="sm"
-                              variant="outline"
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                setSelectedProject(project);
-                              }}
-                            >
-                              Learn More
-                            </Button>
-                          </div>
-                        </div>
+                        {project.title}
+                      </motion.h3>
+                      <motion.p
+                        className="text-sm text-muted-foreground mt-2 flex-1"
+                        initial={{ opacity: 0.8 }}
+                        whileHover={{ opacity: 1 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        {project.description}
+                      </motion.p>
+                      <motion.div
+                        className="flex flex-wrap gap-2 mt-3"
+                        initial={{ opacity: 0.7 }}
+                        whileHover={{ opacity: 1 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        {project.tags.slice(0, 3).map((tag, i) => (
+                          <motion.div
+                            key={i}
+                            whileHover={{ scale: 1.05 }}
+                            transition={{ duration: 0.2 }}
+                          >
+                            <Badge variant="secondary" className="text-xs">
+                              {tag}
+                            </Badge>
+                          </motion.div>
+                        ))}
+                        {project.tags.length > 3 && (
+                          <Badge variant="secondary" className="text-xs">
+                            +{project.tags.length - 3} more
+                          </Badge>
+                        )}
                       </motion.div>
-                    )}
-                  </AnimatePresence>
-
-                  <div className="p-4 text-center">
-                    <ChevronDown
-                      className={`w-6 h-6 mx-auto transition-transform duration-300 ${
-                        expandedProject === project.id ? "rotate-180" : ""
-                      }`}
-                    />
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
+                      <motion.div
+                        className="flex gap-2 mt-4"
+                        initial={{ y: 10, opacity: 0.8 }}
+                        whileHover={{ y: 0, opacity: 1 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <motion.div
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                        >
+                          <Button size="sm" variant="outline" asChild>
+                            <Link
+                              href={project.codeLink}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              <Github className="mr-1 h-4 w-4" /> Code
+                            </Link>
+                          </Button>
+                        </motion.div>
+                        {project.liveLink && (
+                          <motion.div
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                          >
+                            <Button size="sm" variant="outline" asChild>
+                              <Link
+                                href={project.liveLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                <ExternalLink className="mr-1 h-4 w-4" /> Live
+                              </Link>
+                            </Button>
+                          </motion.div>
+                        )}
+                      </motion.div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </div>
-
-      {selectedProject && (
-        <Dialog
-          open={!!selectedProject}
-          onOpenChange={() => setSelectedProject(null)}
-        >
-          <DialogContent className="max-w-3xl">
-            <DialogHeader>
-              <DialogTitle>{selectedProject.title}</DialogTitle>
-              <DialogDescription>
-                <div className="flex flex-wrap gap-2 mt-2 mb-4">
-                  {selectedProject.tags.map((tag, i) => (
-                    <Badge key={i} variant="secondary">
-                      {tag}
-                    </Badge>
-                  ))}
-                </div>
-              </DialogDescription>
-            </DialogHeader>
-            <div className="space-y-4">
-              <img
-                src={selectedProject.image || "/placeholder.svg"}
-                alt={selectedProject.title}
-                className="w-full rounded-md object-cover aspect-video"
-              />
-              <p className="text-muted-foreground">
-                {selectedProject.fullDescription}
-              </p>
-              <div className="space-y-4">
-                <h4 className="font-semibold">Key Features:</h4>
-                <ul className="list-disc list-inside text-muted-foreground space-y-2">
-                  {selectedProject.features.map((feature, i) => (
-                    <li key={i}>{feature}</li>
-                  ))}
-                </ul>
-              </div>
-              <div className="flex justify-end gap-4 mt-4">
-                <Button variant="outline" asChild>
-                  <a
-                    href={selectedProject.githubLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Github className="h-4 w-4 mr-2" />
-                    View Code
-                  </a>
-                </Button>
-                <Button asChild>
-                  <a
-                    href={selectedProject.demoLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <ExternalLink className="h-4 w-4 mr-2" />
-                    Live Demo
-                  </a>
-                </Button>
-              </div>
-            </div>
-          </DialogContent>
-        </Dialog>
-      )}
     </section>
   );
 }
