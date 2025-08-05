@@ -10,58 +10,47 @@ import { Badge } from "@/components/ui/badge";
 export default function Projects() {
   const projects = [
     {
-      title: "E-Commerce Platform",
+      title: "Book Haven Library App",
       description:
-        "A full-featured e-commerce platform with product management, cart functionality, and payment processing.",
-      tags: ["C++", "Qt", "SQLite", "CMake"],
-      codeLink: "https://github.com/memoryleaked/ecommerce",
-      liveLink: "https://ecommerce-demo.memoryleaked.dev",
-      image: "/placeholder.svg?height=200&width=300",
-    },
-    {
-      title: "Task Management System",
-      description:
-        "A collaborative task management application with real-time updates and team workspaces.",
-      tags: ["Java", "Spring Boot", "React", "PostgreSQL"],
-      codeLink: "https://github.com/memoryleaked/task-manager",
-      liveLink: "https://tasks.memoryleaked.dev",
-      image: "/placeholder.svg?height=200&width=300",
-    },
-    {
-      title: "System Resource Monitor",
-      description:
-        "A comprehensive system monitoring tool with real-time analytics and performance tracking.",
-      tags: ["C++", "Python", "Qt", "Linux"],
-      codeLink: "https://github.com/memoryleaked/system-monitor",
+        "A full-featured CRUD app for library management built using html, css, and jsp.",
+      tags: ["HTML", "CSS", "JAVA", "MYSQL"],
+      codeLink: "https://github.com/Kairovus/BookHaven",
       liveLink: null,
-      image: "/placeholder.svg?height=200&width=300",
+      image: null,
     },
     {
-      title: "Compiler Design Project",
+      title: "Sigma Shoes E-commerce ",
       description:
-        "A custom programming language compiler with advanced optimization features and error handling.",
-      tags: ["C", "LLVM", "Assembly", "Python"],
-      codeLink: "https://github.com/memoryleaked/custom-compiler",
+        "An E-commerce website made with java servlet with full CRUD feature",
+      tags: ["JAVA", "CSS", "MYSQL"],
+      codeLink: "https://github.com/Kairovus/Sigma-Shoes",
       liveLink: null,
-      image: "/placeholder.svg?height=200&width=300",
+      image: null,
     },
     {
-      title: "Distributed Database System",
+      title: "Notello Notes App",
       description:
-        "A distributed database system with high availability, fault tolerance, and automatic sharding.",
-      tags: ["C++", "Rust", "gRPC", "Redis"],
-      codeLink: "https://github.com/memoryleaked/distributed-db",
+        "An Android Note-Taking App made using Android Studio With Java",
+      tags: ["Android", "Java"],
+      codeLink: "https://github.com/Kairovus/Notello-Notes-App",
       liveLink: null,
-      image: "/placeholder.svg?height=200&width=300",
+      image: null,
     },
     {
-      title: "Neural Network Framework",
-      description:
-        "A deep learning framework with CUDA acceleration, automatic differentiation, and model optimization.",
-      tags: ["C++", "CUDA", "Python", "CMake"],
-      codeLink: "https://github.com/memoryleaked/neural-framework",
-      liveLink: "https://neural.memoryleaked.dev",
-      image: "/placeholder.svg?height=200&width=300",
+      title: "Steam Proxy App",
+      description: "A web-based js application that fetches steam user data.",
+      tags: ["JS", "Express", "API"],
+      codeLink: "https://github.com/Kairovus/Notello-Notes-App",
+      liveLink: null,
+      image: null,
+    },
+    {
+      title: "Market API Google Cloud",
+      description: "A market API using Express from Google Cloud database",
+      tags: ["JS", "Express", "API", "Google", "Cloud"],
+      codeLink: "https://github.com/Kairovus/Market-API-Google-Cloud",
+      liveLink: null,
+      image: null,
     },
   ];
 
