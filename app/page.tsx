@@ -8,6 +8,7 @@ import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import { MouseFollower } from "@/components/mouse-follower";
 import Certificates from "@/components/certificates";
+import Education from "@/components/education";
 
 export const metadata: Metadata = {
   title: "Muhammad Rizki Dila Bahari | Portfolio",
@@ -25,6 +26,7 @@ export default function Home() {
         <TechStack />
         <Projects />
         {/* <Certificates /> */}
+        <Education />
         <Contact />
       </main>
       <Footer />
