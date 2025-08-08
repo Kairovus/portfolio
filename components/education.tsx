@@ -77,7 +77,7 @@ export default function Education() {
   ];
 
   return (
-    <section id="education" className="py-20 bg-black/30">
+    <section id="education" className="py-20">
       <div className="container mx-auto px-4">
         <motion.div
           initial="hidden"
