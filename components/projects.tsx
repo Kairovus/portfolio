@@ -13,7 +13,7 @@ export default function Projects() {
       title: "Book Haven Library App",
       description:
         "A full-featured CRUD app for library management built using html, css, and jsp.",
-      tags: ["HTML", "CSS", "JAVA", "MYSQL"],
+      tags: ["HTML", "CSS", "Java", "MYSQL"],
       codeLink: "https://github.com/Kairovus/BookHaven",
       liveLink: null,
       image: null,
@@ -22,7 +22,7 @@ export default function Projects() {
       title: "Sigma Shoes E-commerce ",
       description:
         "An E-commerce website made with java servlet with full CRUD feature",
-      tags: ["JAVA", "CSS", "MYSQL"],
+      tags: ["Java", "CSS", "MYSQL"],
       codeLink: "https://github.com/Kairovus/Sigma-Shoes",
       liveLink: null,
       image: null,
